@@ -1,0 +1,81 @@
+{
+  "Symbol": "EURUSD",
+  "Period": "M5",
+  "TradeDirection": "Long",
+  "StopLoss": 20,
+  "TakeProfit": 40,
+  "EntryLots": "0.1",
+  "OpeningLogicConditions": [
+    {
+      "Indicator": "RSI",
+      "LogicRule": "RSI crosses below the level line",
+      "Params": {
+        "Period": 14,
+        "Level": 30,
+        "Price": "Close"
+      }
+    },
+    {
+      "Indicator": "MA",
+      "LogicRule": "Price crosses above MA",
+      "Params": {
+        "Period": 50,
+        "Method": "SMA",
+        "Price": "Close",
+        "Shift": 0
+      }
+    },
+    {
+      "Indicator": "Bollinger Bands",
+      "LogicRule": "Price crosses below the lower band",
+      "Params": {
+        "Period": 20,
+        "Deviations": 2,
+        "Price": "Close"
+      }
+    }
+  ],
+  "ClosingLogicConditions": [
+    {
+      "Indicator": "Trailing Stop",
+      "LogicRule": "Trailing Stop triggers",
+      "Params": {
+        "Distance": 20,
+        "Step": 5
+      }
+    },
+    {
+      "Indicator": "RSI",
+      "LogicRule": "RSI crosses above the level line",
+      "Params": {
+        "Period": 14,
+        "Level": 70,
+        "Price": "Close"
+      }
+    }
+  ],
+  "Optimization": {
+    "Enabled": true,
+    "Criterion": "Profit Factor",
+    "Parameters": [
+      {
+        "Name": "RSI Period",
+        "Min": 7,
+        "Max": 21,
+        "Step": 1
+      },
+      {
+        "Name": "MA Period",
+        "Min": 20,
+        "Max": 100,
+        "Step": 5
+      }
+    ]
+  },
+  "Backtest": {
+    "Start": "2020-01-01",
+    "End": "2023-01-01",
+    "InitialDeposit": 10000,
+    "Spread": 2
+  }
+}

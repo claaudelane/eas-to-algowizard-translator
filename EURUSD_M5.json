@@ -1,0 +1,35 @@
+{
+    "Symbol": "EURUSD",
+    "Period": "M5",
+    "StopLoss": 20,
+    "TakeProfit": 40,
+    "EntryLots": "0.1",
+    "OpeningLogicConditions": [
+      {
+        "Indicator": "RSI",
+        "LogicRule": "RSI crosses below the level line",
+        "Params": {
+          "Period": 14,
+          "Level": 30
+        }
+      },
+      {
+        "Indicator": "MA",
+        "LogicRule": "Price crosses above MA",
+        "Params": {
+          "Period": 50,
+          "Method": "SMA"
+        }
+      }
+    ],
+    "ClosingLogicConditions": [
+      {
+        "Indicator": "Trailing Stop",
+        "LogicRule": "Trailing Stop triggers",
+        "Params": {
+          "Distance": 20
+        }
+      }
+    ]
+  }
+  
