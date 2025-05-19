@@ -379,8 +379,10 @@ def to_markdown(strategy_dict, output_path):
     lines.append(f"5. Configure take profit at {strategy_dict['take_profit']} pips")
     lines.append(f"6. Set position size to {strategy_dict['position_size']} lots")
     
-    # Create directory if it doesn't exist
-    os.makedirs(os.path.dirname(output_path), exist_ok=True)
+    # Create directory if it doesn't exist and a directory was specified
+    output_dir = os.path.dirname(output_path)
+    if output_dir:
+        os.makedirs(output_dir, exist_ok=True)
     
     try:
         with open(output_path, 'w', encoding='utf-8') as out_file:
