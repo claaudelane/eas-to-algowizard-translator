@@ -36,11 +36,12 @@ python parse_strategy.py sample/EURUSD_M5.json -v
 ## 📂 Project Structure
 
 ```
-/eas-strategy-parser/
+/eas-to-algowizard-translator/
 ├── sample/                 # Sample EAS JSON strategy files
 │   └── EURUSD_M5.json
 ├── output/                 # Generated markdown files
 │   └── EURUSD_M5_parsed.md
+├── parse_collection.py     # Parser for strategy collections
 ├── parse_strategy.py       # Main parser script
 └── README.md               # Project documentation
 ```
