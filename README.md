@@ -52,6 +52,15 @@ python parse_strategy.py sample/EURUSD_M5.json -v
 3. **View** the generated markdown with structured strategy information
 4. **Implement** in AlgoWizard using the translated instructions
 
+## ✅ Running Tests
+
+Tests are written using `pytest` and located in the `tests/` directory. To run
+them:
+
+```bash
+python -m pytest
+```
+
 ## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit pull requests.
